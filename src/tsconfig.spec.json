@@ -9,7 +9,7 @@
 	},
 	"files": [
 		"test.ts",
-		"polyfills.ts"
+		"bootstrap/scripts/polyfills.ts"
 	],
 	"include": [
 		"**/*.spec.ts",
