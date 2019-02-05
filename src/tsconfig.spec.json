@@ -8,7 +8,7 @@
 		]
 	},
 	"files": [
-		"test.ts",
+		"bootstrap/tests/test.ts",
 		"bootstrap/scripts/polyfills.ts"
 	],
 	"include": [

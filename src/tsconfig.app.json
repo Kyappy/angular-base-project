@@ -5,7 +5,7 @@
 		"types": []
 	},
 	"exclude": [
-		"test.ts",
+		"bootstrap/tests/test.ts",
 		"**/*.spec.ts"
 	]
 }
