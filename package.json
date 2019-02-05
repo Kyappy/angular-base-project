@@ -4,9 +4,12 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build": "ng build",
-		"test": "ng test",
-		"lint": "ng lint",
+		"build": "ng build angular-base-project",
+		"build-prod": "ng build angular-base-project --prod",
+		"test": "ng test angular-base-project --browsers=Chrome",
+		"test-coverage": "ng test angular-base-project --browsers=Chrome --code-coverage --source-map --watch",
+		"lint": "ng lint angular-base-project",
+		"style": "stylelint \"./src/**/*.scss\"",
 		"e2e": "ng e2e"
 	},
 	"private": true,
