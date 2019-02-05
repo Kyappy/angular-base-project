@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
+/**
+ * Application main component.
+ */
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+	selector: 'app-root',
+	templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'angular-base-project';
+	/**
+	 * Application title.
+	 */
+	public title: string = 'angular-base-project';
 }

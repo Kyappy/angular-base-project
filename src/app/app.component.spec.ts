@@ -1,35 +1,40 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import {AppComponent} from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
+	// region global
+	let component: AppComponent;
+	let fixture: ComponentFixture<AppComponent>;
+	// endregion
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [
+				AppComponent
+			],
+			imports: [
+				RouterTestingModule
+			]
+		}).compileComponents().catch(() => {
+			throw new Error('AppComponent test initialization failure');
+		});
 
-  it(`should have as title 'angular-base-project'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-base-project');
-  });
+		fixture = TestBed.createComponent(AppComponent);
+		component = fixture.componentInstance;
+	}));
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-base-project!');
-  });
+	it('should create the app', () => {
+		expect(component).toBeTruthy();
+	});
+
+	it(`should have as title 'angular-base-project'`, () => {
+		expect(component.title).toEqual('angular-base-project');
+	});
+
+	it('should render title in a h1 tag', () => {
+		fixture.detectChanges();
+		const ELEMENT: Element = fixture.debugElement.nativeElement;
+		expect(ELEMENT.querySelector('h1').textContent).toContain('Welcome to angular-base-project!');
+	});
 });
